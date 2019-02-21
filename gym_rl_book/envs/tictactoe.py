@@ -76,6 +76,8 @@ class TicTacToeEnv(gym.Env):
     # Useful util methods for tic-tac-toe
     def legal_moves(self):
         moves = []
+        if self.done:
+            return moves
 
         for r in range(self.BOARD_SIZE):
             for c in range(self.BOARD_SIZE):
