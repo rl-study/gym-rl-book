@@ -3,6 +3,7 @@ import gym
 from gym import error, spaces, utils
 from tabulate import tabulate
 
+import copy
 
 class TicTacToeEnv(gym.Env):
     metadata = {'render.modes': ['human']}
@@ -38,7 +39,7 @@ class TicTacToeEnv(gym.Env):
 
         reward, self.done = self._check_status()
 
-        return self.board, reward, self.done, {}
+        return copy.deepcopy(self.board), reward, self.done, {}
 
     def _check_status(self):
         rows = self.board
@@ -69,6 +70,7 @@ class TicTacToeEnv(gym.Env):
         self.remaining_place = self.BOARD_SIZE * self.BOARD_SIZE
         self.done = False
         self.last_stone = self.STONES[1]
+        return copy.deepcopy(self.board)
 
     def render(self, mode='human', close=False):
         print(tabulate(self.board, tablefmt='grid'))
