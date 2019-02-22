@@ -1,8 +1,9 @@
-from setuptools import setup
+import setuptools
 
-setup(name='gym_rl_book',
-      version='0.0.2',
+setuptools.setup(name='gym_rl_book',
+      version='0.0.3',
       install_requires=['gym', 'numpy', 'tabulate'],
+      packages=setuptools.find_packages(),
       long_description=open('README.md').read(),
       url='https://github.com/void-main/gym-rl-book',
       author='void-main',
