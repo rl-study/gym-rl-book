@@ -18,8 +18,9 @@ class MultiArmBanditEnv(gym.Env):
 
         self.reset()
 
-    def tune(self, stationary=True):
+    def tune(self, K = 10, stationary=True):
         self.stationary = stationary
+        self.K = K
 
         self.reset()
 
