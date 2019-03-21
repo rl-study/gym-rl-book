@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(name='gym_rl_book',
-      version='0.0.3',
+      version='0.0.4',
       install_requires=['gym', 'numpy', 'tabulate'],
       packages=setuptools.find_packages(),
       long_description=open('README.md').read(),
