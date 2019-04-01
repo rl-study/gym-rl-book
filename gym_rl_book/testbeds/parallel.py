@@ -80,10 +80,11 @@ class PTestbed:
 
         color_idx = 0
         for k in self._results.keys():
-            ys = [self._results[k][x] for x in xs]
+            ys = [self._results[k][self._parameter_sets[x]] for x in xs]
             ax1.plot(xs, ys, colors[color_idx], label=k)
             color_idx += 1
             color_idx %= len(colors)
 
         ax1.legend()
+        plt.show()
 
